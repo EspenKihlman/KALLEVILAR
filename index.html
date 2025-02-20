@@ -15,6 +15,7 @@
             margin: 0;
             font-family: Arial, sans-serif;
             text-align: center;
+            padding: 10px; /* För att ge utrymme runt kanterna på mobilen */
         }
 
         /* Större text för rubriken */
@@ -30,6 +31,7 @@
             justify-content: center;
             gap: 10px;
             margin-bottom: 20px;
+            width: 100%;
         }
 
         /* Stil för knapparna */
@@ -42,6 +44,8 @@
             background-color: #007bff;
             color: white;
             transition: 0.3s;
+            width: 48%; /* Gör knapparna lite bredare och centrerade */
+            max-width: 200px; /* Maximal bredd på knapparna */
         }
 
         .knapp-container button:hover {
@@ -64,13 +68,14 @@
                 font-size: 10vw;
             }
 
-            .knapp-container {
-                flex-direction: column;
-                align-items: center;
+            .knapp-container button {
+                width: 100%; /* Gör knapparna ta upp hela bredden på små skärmar */
+                max-width: none; /* Ta bort max-bredd på knappar */
             }
 
-            .knapp-container button {
-                width: 80%;
+            .bild {
+                width: 100%; /* Gör bilderna bredare på mobilen */
+                max-width: 100%; /* Se till att bilderna inte blir för stora */
             }
         }
     </style>
