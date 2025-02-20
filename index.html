@@ -35,41 +35,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visa Flera Bilder</title>
     <style>
+        /* Gör att varje knapp + bild hamnar i en egen kolumn */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px; /* Skapa avstånd mellan varje sektion */
+        }
+
         /* Dölj bilder från början */
         .bild {
             display: none;
-            width: 300px; /* Justera storlek om du vill */
+            width: 90%; /* Gör bilden responsiv */
+            max-width: 400px; /* Begränsa maxstorlek */
+            border-radius: 10px; /* Runda hörn för en snyggare look */
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Skugga för bättre design */
+        }
+
+        /* Anpassa knapparna för bättre klickvänlighet */
+        .container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .container button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Mobilanpassning */
+        @media (max-width: 600px) {
+            .bild {
+                width: 100%; /* Ta upp hela skärmen på små enheter */
+            }
+
+            .container button {
+                width: 80%; /* Gör knappar bredare för mobil */
+            }
         }
     </style>
 </head>
 <body>
 
-    <button onclick="visaBild('bild1')">Visa Bild 1</button>
-    <img id="bild1" class="bild" src="kv1.jpg" alt="Bild 1">
+    <div class="container">
+        <button onclick="visaBild('bild1')">Visa Bild 1</button>
+        <img id="bild1" class="bild" src="kv1.jpg" alt="Bild 1">
+    </div>
 
-    <button onclick="visaBild('bild2')">Visa Bild 2</button>
-    <img id="bild2" class="bild" src="kv2.png" alt="Bild 2">
+    <div class="container">
+        <button onclick="visaBild('bild2')">Visa Bild 2</button>
+        <img id="bild2" class="bild" src="kv2.png" alt="Bild 2">
+    </div>
 
-    <button onclick="visaBild('bild3')">Visa Bild 3</button>
-    <img id="bild3" class="bild" src="kv3.png" alt="Bild 3">
+    <div class="container">
+        <button onclick="visaBild('bild3')">Visa Bild 3</button>
+        <img id="bild3" class="bild" src="kv3.png" alt="Bild 3">
+    </div>
 
-    <button onclick="visaBild('bild4')">Visa Bild 4</button>
-    <img id="bild4" class="bild" src="kv4.jpg" alt="Bild 4">
+    <div class="container">
+        <button onclick="visaBild('bild4')">Visa Bild 4</button>
+        <img id="bild4" class="bild" src="kv4.jpg" alt="Bild 4">
+    </div>
 
-    <button onclick="visaBild('bild5')">Visa Bild 5</button>
-    <img id="bild5" class="bild" src="kv5.jpg" alt="Bild 5">
+    <div class="container">
+        <button onclick="visaBild('bild5')">Visa Bild 5</button>
+        <img id="bild5" class="bild" src="kv5.jpg" alt="Bild 5">
+    </div>
 
-    <button onclick="visaBild('bild6')">Visa Bild 6</button>
-    <img id="bild6" class="bild" src="kv6.jpg" alt="Bild 6">
+    <div class="container">
+        <button onclick="visaBild('bild6')">Visa Bild 6</button>
+        <img id="bild6" class="bild" src="kv6.jpg" alt="Bild 6">
+    </div>
 
-    <button onclick="visaBild('bild7')">Visa Bild 7</button>
-    <img id="bild7" class="bild" src="kv7.png" alt="Bild 7">
+    <div class="container">
+        <button onclick="visaBild('bild7')">Visa Bild 7</button>
+        <img id="bild7" class="bild" src="kv7.png" alt="Bild 7">
+    </div>
 
-    <button onclick="visaBild('bild8')">Visa Bild 8</button>
-    <img id="bild8" class="bild" src="kv8.jpg" alt="Bild 8">
+    <div class="container">
+        <button onclick="visaBild('bild8')">Visa Bild 8</button>
+        <img id="bild8" class="bild" src="kv8.jpg" alt="Bild 8">
+    </div>
 
-    <button onclick="visaBild('bild9')">Visa Bild 9</button>
-    <img id="bild9" class="bild" src="kv9.jpg" alt="Bild 9">
+    <div class="container">
+        <button onclick="visaBild('bild9')">Visa Bild 9</button>
+        <img id="bild9" class="bild" src="kv9.jpg" alt="Bild 9">
+    </div>
 
     <script>
         function visaBild(bildId) {
