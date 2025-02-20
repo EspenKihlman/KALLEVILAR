@@ -61,3 +61,41 @@
 </body>
 </html>
 
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visa Flera Bilder</title>
+    <style>
+        /* Dölj bilder från början */
+        .bild {
+            display: none;
+            width: 300px; /* Anpassa storleken om du vill */
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="visaBild('bild1')">Visa Bild 1</button>
+    <img id="bild1" class="bild" src="kv1.jpg" alt="Bild 1">
+
+    <button onclick="visaBild('bild2')">Visa Bild 2</button>
+    <img id="bild2" class="bild" src="bild2.jpg" alt="Bild 2">
+
+    <button onclick="visaBild('bild3')">Visa Bild 3</button>
+    <img id="bild3" class="bild" src="bild3.jpg" alt="Bild 3">
+
+    <script>
+        function visaBild(bildId) {
+            var bild = document.getElementById(bildId);
+            if (bild.style.display === "none") {
+                bild.style.display = "block";
+            } else {
+                bild.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
