@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KALLEVILAR</title>
     <style>
-        /* Centrerar allt innehåll */
         body {
             display: flex;
             flex-direction: column;
@@ -15,44 +14,14 @@
             margin: 0;
             font-family: Arial, sans-serif;
             text-align: center;
-            padding: 10px; /* För att ge utrymme runt kanterna på mobilen */
+            padding: 10px;
         }
 
-        /* Större text för rubriken */
         h1 {
             font-size: 5vw;
             margin-bottom: 20px;
         }
 
-        /* Knapparnas container */
-        .knapp-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 20px;
-            width: 100%;
-        }
-
-        /* Stil för knapparna */
-        .knapp-container button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            background-color: #007bff;
-            color: white;
-            transition: 0.3s;
-            width: 48%; /* Gör knapparna lite bredare och centrerade */
-            max-width: 200px; /* Maximal bredd på knapparna */
-        }
-
-        .knapp-container button:hover {
-            background-color: #0056b3;
-        }
-
-        /* Stil för bilderna */
         .bild {
             display: none;
             width: 90%;
@@ -62,20 +31,44 @@
             margin-top: 20px;
         }
 
-        /* Mobilanpassning */
+        .knapp-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .knapp-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            transition: 0.3s;
+            width: 48%;
+            max-width: 200px;
+        }
+
+        .knapp-container button:hover {
+            background-color: #0056b3;
+        }
+
         @media (max-width: 600px) {
             h1 {
                 font-size: 10vw;
             }
 
             .knapp-container button {
-                width: 100%; /* Gör knapparna ta upp hela bredden på små skärmar */
-                max-width: none; /* Ta bort max-bredd på knappar */
+                width: 100%;
+                max-width: none;
             }
 
             .bild {
-                width: 100%; /* Gör bilderna bredare på mobilen */
-                max-width: 100%; /* Se till att bilderna inte blir för stora */
+                width: 100%;
+                max-width: 100%;
             }
         }
     </style>
@@ -84,43 +77,36 @@
 
     <h1>KALLEVILAR</h1>
 
-    <!-- Knapparna under rubriken -->
+    <!-- Knapp för att visa alla bilder -->
     <div class="knapp-container">
-        <button onclick="visaBild('bild1')">Visa Bild 1</button>
-        <button onclick="visaBild('bild2')">Visa Bild 2</button>
-        <button onclick="visaBild('bild3')">Visa Bild 3</button>
-        <button onclick="visaBild('bild4')">Visa Bild 4</button>
-        <button onclick="visaBild('bild5')">Visa Bild 5</button>
-        <button onclick="visaBild('bild6')">Visa Bild 6</button>
-        <button onclick="visaBild('bild7')">Visa Bild 7</button>
-        <button onclick="visaBild('bild8')">Visa Bild 8</button>
-        <button onclick="visaBild('bild9')">Visa Bild 9</button>
+        <button onclick="visaAllaBilder()">Visa Alla Bilder</button>
     </div>
 
-    <!-- Bilderna visas här -->
-    <img id="bild1" class="bild" src="kv1.jpg" alt="Bild 1">
-    <img id="bild2" class="bild" src="kv2.png" alt="Bild 2">
-    <img id="bild3" class="bild" src="kv3.png" alt="Bild 3">
-    <img id="bild4" class="bild" src="kv4.jpg" alt="Bild 4">
-    <img id="bild5" class="bild" src="kv5.jpg" alt="Bild 5">
-    <img id="bild6" class="bild" src="kv6.jpg" alt="Bild 6">
-    <img id="bild7" class="bild" src="kv7.png" alt="Bild 7">
-    <img id="bild8" class="bild" src="kv8.jpg" alt="Bild 8">
-    <img id="bild9" class="bild" src="kv9.jpg" alt="Bild 9">
+    <!-- Alla bilder -->
+    <div id="bilder">
+        <img class="bild" src="kv1.jpg" alt="Bild 1">
+        <img class="bild" src="kv2.png" alt="Bild 2">
+        <img class="bild" src="kv3.png" alt="Bild 3">
+        <img class="bild" src="kv4.jpg" alt="Bild 4">
+        <img class="bild" src="kv5.jpg" alt="Bild 5">
+        <img class="bild" src="kv6.jpg" alt="Bild 6">
+        <img class="bild" src="kv7.png" alt="Bild 7">
+        <img class="bild" src="kv8.jpg" alt="Bild 8">
+        <img class="bild" src="kv9.jpg" alt="Bild 9">
+    </div>
 
     <script>
-        function visaBild(bildId) {
-            // Hämta alla bilder
+        function visaAllaBilder() {
             var bilder = document.querySelectorAll('.bild');
-
-            // Göm alla bilder
+            
+            // Loop för att visa/dölja alla bilder
             bilder.forEach(function(bild) {
-                bild.style.display = "none";
+                if (bild.style.display === "none" || bild.style.display === "") {
+                    bild.style.display = "block"; // Visa bilden
+                } else {
+                    bild.style.display = "none"; // Dölja bilden
+                }
             });
-
-            // Visa endast den valda bilden
-            var valdBild = document.getElementById(bildId);
-            valdBild.style.display = "block";
         }
     </script>
 
