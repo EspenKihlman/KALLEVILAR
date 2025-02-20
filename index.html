@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KALLEVILAR</title>
     <style>
-        /* Centrerar all text och innehåll */
+        /* Centrerar allt innehåll */
         body {
             display: flex;
             flex-direction: column;
@@ -23,7 +23,7 @@
             margin-bottom: 20px;
         }
 
-        /* Container för knapparna */
+        /* Knapparnas container */
         .knapp-container {
             display: flex;
             flex-wrap: wrap;
@@ -105,16 +105,22 @@
 
     <script>
         function visaBild(bildId) {
-            var bild = document.getElementById(bildId);
-            if (bild.style.display === "none" || bild.style.display === "") {
-                bild.style.display = "block"; // Visa bilden
-            } else {
-                bild.style.display = "none"; // Göm bilden
-            }
+            // Hämta alla bilder
+            var bilder = document.querySelectorAll('.bild');
+
+            // Göm alla bilder
+            bilder.forEach(function(bild) {
+                bild.style.display = "none";
+            });
+
+            // Visa endast den valda bilden
+            var valdBild = document.getElementById(bildId);
+            valdBild.style.display = "block";
         }
     </script>
 
 </body>
 </html>
+
 
 
