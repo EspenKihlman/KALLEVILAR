@@ -5,55 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KALLEVILAR</title>
     <style>
+        /* Centrerar all text och innehåll */
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
-            font-size: 5vw; /* Standardstorlek för text */
+            text-align: center;
         }
 
-        @media (max-width: 600px) {
-            body {
-                font-size: 10vw; /* Ökar textstorleken på mindre skärmar */
-            }
+        /* Större text för rubriken */
+        h1 {
+            font-size: 5vw;
+            margin-bottom: 20px;
         }
-    </style>
-</head>
-<body>
-    <p>KALLEVILAR</p>
-</body>
-</html>
 
-
-<!DOCTYPE html>
-<html lang="sv">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visa Flera Bilder</title>
-    <style>
-        /* Gör att varje knapp + bild hamnar i en egen kolumn */
-        .container {
+        /* Container för knapparna */
+        .knapp-container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 20px; /* Skapa avstånd mellan varje sektion */
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
         }
 
-        /* Dölj bilder från början */
-        .bild {
-            display: none;
-            width: 90%; /* Gör bilden responsiv */
-            max-width: 400px; /* Begränsa maxstorlek */
-            border-radius: 10px; /* Runda hörn för en snyggare look */
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Skugga för bättre design */
-        }
-
-        /* Anpassa knapparna för bättre klickvänlighet */
-        .container button {
+        /* Stil för knapparna */
+        .knapp-container button {
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
@@ -64,68 +44,64 @@
             transition: 0.3s;
         }
 
-        .container button:hover {
+        .knapp-container button:hover {
             background-color: #0056b3;
+        }
+
+        /* Stil för bilderna */
+        .bild {
+            display: none;
+            width: 90%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
         }
 
         /* Mobilanpassning */
         @media (max-width: 600px) {
-            .bild {
-                width: 100%; /* Ta upp hela skärmen på små enheter */
+            h1 {
+                font-size: 10vw;
             }
 
-            .container button {
-                width: 80%; /* Gör knappar bredare för mobil */
+            .knapp-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .knapp-container button {
+                width: 80%;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <h1>KALLEVILAR</h1>
+
+    <!-- Knapparna under rubriken -->
+    <div class="knapp-container">
         <button onclick="visaBild('bild1')">Visa Bild 1</button>
-        <img id="bild1" class="bild" src="kv1.jpg" alt="Bild 1">
-    </div>
-
-    <div class="container">
         <button onclick="visaBild('bild2')">Visa Bild 2</button>
-        <img id="bild2" class="bild" src="kv2.png" alt="Bild 2">
-    </div>
-
-    <div class="container">
         <button onclick="visaBild('bild3')">Visa Bild 3</button>
-        <img id="bild3" class="bild" src="kv3.png" alt="Bild 3">
-    </div>
-
-    <div class="container">
         <button onclick="visaBild('bild4')">Visa Bild 4</button>
-        <img id="bild4" class="bild" src="kv4.jpg" alt="Bild 4">
-    </div>
-
-    <div class="container">
         <button onclick="visaBild('bild5')">Visa Bild 5</button>
-        <img id="bild5" class="bild" src="kv5.jpg" alt="Bild 5">
-    </div>
-
-    <div class="container">
         <button onclick="visaBild('bild6')">Visa Bild 6</button>
-        <img id="bild6" class="bild" src="kv6.jpg" alt="Bild 6">
-    </div>
-
-    <div class="container">
         <button onclick="visaBild('bild7')">Visa Bild 7</button>
-        <img id="bild7" class="bild" src="kv7.png" alt="Bild 7">
-    </div>
-
-    <div class="container">
         <button onclick="visaBild('bild8')">Visa Bild 8</button>
-        <img id="bild8" class="bild" src="kv8.jpg" alt="Bild 8">
+        <button onclick="visaBild('bild9')">Visa Bild 9</button>
     </div>
 
-    <div class="container">
-        <button onclick="visaBild('bild9')">Visa Bild 9</button>
-        <img id="bild9" class="bild" src="kv9.jpg" alt="Bild 9">
-    </div>
+    <!-- Bilderna visas här -->
+    <img id="bild1" class="bild" src="kv1.jpg" alt="Bild 1">
+    <img id="bild2" class="bild" src="kv2.png" alt="Bild 2">
+    <img id="bild3" class="bild" src="kv3.png" alt="Bild 3">
+    <img id="bild4" class="bild" src="kv4.jpg" alt="Bild 4">
+    <img id="bild5" class="bild" src="kv5.jpg" alt="Bild 5">
+    <img id="bild6" class="bild" src="kv6.jpg" alt="Bild 6">
+    <img id="bild7" class="bild" src="kv7.png" alt="Bild 7">
+    <img id="bild8" class="bild" src="kv8.jpg" alt="Bild 8">
+    <img id="bild9" class="bild" src="kv9.jpg" alt="Bild 9">
 
     <script>
         function visaBild(bildId) {
@@ -140,3 +116,5 @@
 
 </body>
 </html>
+
+
