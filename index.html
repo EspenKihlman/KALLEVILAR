@@ -38,25 +38,26 @@
         /* Dölj bilden från början */
         #minBild {
             display: none;
-            width: 300px; /* Justera storlek om du vill */
+            width: 300px; /* Ändra storleken om du vill */
         }
     </style>
 </head>
 <body>
 
     <button onclick="visaBild()">Visa Bild</button>
-    <img src="QRCode.png" alt="QRCode.png">
+    <img id="minBild" src="din-bild.jpg" alt="Beskrivning av bilden">
 
     <script>
         function visaBild() {
             var bild = document.getElementById("minBild");
             if (bild.style.display === "none") {
-                bild.style.display = "block";
+                bild.style.display = "block"; // Visa bilden
             } else {
-                bild.style.display = "none";
+                bild.style.display = "none"; // Göm bilden
             }
         }
     </script>
 
 </body>
 </html>
+
