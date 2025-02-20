@@ -26,4 +26,37 @@
     <p>KALLEVILAR</p>
 </body>
 </html>
-<img src="QRCode.png" alt="QRCode.png">
+
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visa Bild</title>
+    <style>
+        /* Dölj bilden från början */
+        #minBild {
+            display: none;
+            width: 300px; /* Justera storlek om du vill */
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="visaBild()">Visa Bild</button>
+    <img src="QRCode.png" alt="QRCode.png">
+
+    <script>
+        function visaBild() {
+            var bild = document.getElementById("minBild");
+            if (bild.style.display === "none") {
+                bild.style.display = "block";
+            } else {
+                bild.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
